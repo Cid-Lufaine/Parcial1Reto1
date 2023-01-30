@@ -2,13 +2,14 @@ import java.util.Objects;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
         int num1;
         int num2;
+        int repeat=1;
+        String operation;
+        do{
         System.out.println("Captura operación:");
-        String operation = sc.nextLine();
-
+        Scanner sc = new Scanner(System.in);
+        operation = sc.nextLine();
         if(     Objects.equals(operation, "SUMA") ||
                 Objects.equals(operation, "RESTA") ||
                 Objects.equals(operation, "MULTIPLICACION") ||
@@ -25,12 +26,14 @@ public class Main {
                     if (num2 != 0) {
                         System.out.println(num1 + " / " + num2 + " = " + (num1 / num2));
                     } else {
-                        System.out.println("Operación no soportada");
+                        System.out.println("no es posible dividir entre 0");
                     }
                 }
             }
         }else{
             System.out.println("Operación no soportada");
-        }
+            repeat=0;
+        }}while (repeat==1);
+
     }
 }
